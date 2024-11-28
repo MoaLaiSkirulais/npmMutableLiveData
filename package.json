@@ -1,12 +1,16 @@
 {
 	"name": "@martinporto/mutable-live-data",
-	"version": "3.0.3",
+	"version": "3.0.6",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rollup -c",
 		"dev": "concurrently \"tsc --watch\" \"nodemon ./dist/index.js\"",
 		"prepare": "npm run build",
 		"test": "jest --verbose"
+	},
+	"repository": {
+		"type": "github",
+		"url": "https://github.com/MoaLaiSkirulais/npmMutableLiveData"
 	},
 	"author": "Martin Porto",
 	"license": "MIT",
