@@ -6,7 +6,8 @@
 		"build": "rollup -c",
 		"dev": "concurrently \"tsc --watch\" \"nodemon ./dist/index.js\"",
 		"prepare": "npm run build",
-		"test": "jest --verbose"
+		"test": "jest --verbose",
+		"examples": "concurrently \"tsc --watch\" \"nodemon ./dist/examples/index.js\""
 	},
 	"repository": {
 		"type": "github",
