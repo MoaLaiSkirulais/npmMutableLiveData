@@ -1,4 +1,4 @@
-import { MutableLiveData } from "../index.js";
+import { MutableLiveData } from "../MutableLiveData.class.js";
 import { Mutable } from "../Mutable.class.js";
 
 var m: MutableLiveData<String>;
@@ -8,6 +8,18 @@ m.postValue("hola");
 m.observe((a: String) => {
 	console.log("m", a)
 	return "a";
+});
+
+m.observe2((a: String) => {
+	console.log("m", a)
+	return "a";
+});
+
+m.observe2(new class Observer<Number> {
+ 
+	onChange(value: Number):any {
+		console.log("value", value, typeof value);
+	}
 });
 
 /* number */
@@ -20,4 +32,5 @@ age.observe(new class Observer<Number> {
 });
 
 age.postValue(23);
+
 
