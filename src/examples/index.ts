@@ -1,36 +1,26 @@
 import { MutableLiveData } from "../MutableLiveData.class.js";
-import { Mutable } from "../Mutable.class.js";
 
-var m: MutableLiveData<String>;
-m = new MutableLiveData(String);
+var color: MutableLiveData<String>;
+color = new MutableLiveData(String);
+//color.postValue("yellow");
 
-m.postValue("hola");
-m.observe((a: String) => {
-	console.log("m", a)
-	return "a";
+color.observe((value: String) => {
+	//console.log("value1", value);
 });
 
-m.observe2((a: String) => {
-	console.log("m", a)
-	return "a";
-});
-
-m.observe2(new class Observer<Number> {
+color.observe(new class <String> {
  
-	onChange(value: Number):any {
-		console.log("value", value, typeof value);
+	onChange(value: String):any {
+
+		console.log("value2", value, typeof value);
 	}
 });
 
-/* number */
-var age = new Mutable(Number);
-age.observe(new class Observer<Number> {
- 
-	onChange(value: Number):any {
-		console.log("value", value, typeof value);
-	}
-});
+color.postValue("red");
+color.postValue("green");
+color.postValue("blue");
 
-age.postValue(23);
+
+
 
 
